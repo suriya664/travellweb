@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bookings · Travel Hub Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
+  <link rel="stylesheet" href="../assets/css/responsive.css" />
+  <link rel="icon" href="../assets/images/logo/travel-hub.svg" type="image/svg+xml" />
+</head>
+
+<body class="dashboard-page">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <img src="../assets/images/logo/travel-hub.svg" alt="Travel Hub logo" width="48" height="48" />
+        Travel Hub
+      </a>
+      <nav class="main-nav">
+        <div class="nav-item dropdown">
+          <button class="dropdown-toggle" type="button" data-dropdown-toggle="home-menu" aria-expanded="false" aria-haspopup="true">
+            Home
+            <span class="dropdown-icon" aria-hidden="true">▾</span>
+          </button>
+          <div class="dropdown-menu" id="home-menu">
+            <a href="../index.html" class="dropdown-link">Home Style 1</a>
+            <a href="../index-2.html" class="dropdown-link">Home Style 2</a>
+          </div>
+        </div>
+        <a class="nav-link" href="../destinations/index.html">Destinations</a>
+        <a class="nav-link" href="../packages/index.html">Packages</a>
+        <a class="nav-link" href="../services/index.html">Services</a>
+        <a class="nav-link" href="../blog/index.html">Blog</a>
+        <a class="nav-link" href="../contact.html">Contact</a>
+      </nav>
+      <div class="header-cta">
+        <a class="btn light" href="../auth/login.html">Logout</a>
+      </div>
+      <button class="mobile-toggle" type="button" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <aside class="dashboard-sidebar">
+      <a class="brand" href="index.html">
+        <img src="../assets/images/logo/travel-hub.svg" alt="Travel Hub logo" width="48" height="48" />
+        Travel Hub
+      </a>
+      <div class="dashboard-user">
+        <img src="../assets/images/profile/traveler-avatar.svg" alt="Traveler avatar" width="88" height="88" />
+        <strong>Jordan Taylor</strong>
+        <span>Member since 2023</span>
+      </div>
+      <nav class="dashboard-nav">
+        <a class="sidebar-link" href="index.html">Overview</a>
+        <a class="sidebar-link active" href="my-bookings.html">My bookings</a>
+        <a class="sidebar-link" href="profile.html">Profile</a>
+        <a class="sidebar-link" href="messages.html">Messages</a>
+      </nav>
+    </aside>
+
+    <main class="dashboard-content">
+      <section class="highlight-card" data-aos="fade-up">
+        <figure class="card-media">
+          <img src="https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=1200&h=600&fit=crop" alt="Travel itinerary planning" width="1200" height="600" loading="lazy" decoding="async" />
+        </figure>
+        <h2>Your adventures at a glance</h2>
+        <p>Track confirmed trips, update wishlists, and request concierge changes in one place.</p>
+      </section>
+
+      <header>
+        <div>
+          <h1>My bookings</h1>
+          <p>Manage upcoming, past, and wishlist experiences.</p>
+        </div>
+        <a class="btn" href="../packages/booking.html">Plan a new trip</a>
+      </header>
+
+      <section class="dashboard-section">
+        <div class="filter-bar dashboard-filter">
+          <div class="filter-group">
+            <label for="booking-status">Status</label>
+            <select id="booking-status" data-target="#booking-list">
+              <option value="all">All</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="in-progress">In progress</option>
+              <option value="wishlist">Wishlist</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="booking-list" class="message-list">
+          <article class="booking-card" data-filtered data-filter="confirmed">
+            <h4>Santorini Caldera Escape</h4>
+            <div class="booking-meta">
+              <span>Apr 12 – Apr 18, 2026</span>
+              <span>2 travelers</span>
+              <span class="badge-status success">Confirmed</span>
+            </div>
+            <div class="booking-actions">
+              <a class="btn light" href="../destinations/destination-details.html">View itinerary</a>
+              <a class="btn" href="../contact.html">Message concierge</a>
+            </div>
+          </article>
+
+          <article class="booking-card" data-filtered data-filter="in-progress">
+            <h4>Patagonia Expedition</h4>
+            <div class="booking-meta">
+              <span>Nov 4 – Nov 13, 2026</span>
+              <span>4 travelers</span>
+              <span class="badge-status info">In progress</span>
+            </div>
+            <div class="booking-actions">
+              <a class="btn light" href="../packages/package-details.html">View itinerary</a>
+              <a class="btn" href="../contact.html">Request updates</a>
+            </div>
+          </article>
+
+          <article class="booking-card" data-filtered data-filter="completed">
+            <h4>Kyoto Heritage Journey</h4>
+            <div class="booking-meta">
+              <span>Mar 2 – Mar 10, 2025</span>
+              <span>2 travelers</span>
+              <span class="badge-status success">Completed</span>
+            </div>
+            <div class="booking-actions">
+              <a class="btn light" href="../blog/post.html">View recap</a>
+              <a class="btn" href="../gallery/album.html">See album</a>
+            </div>
+          </article>
+
+          <article class="booking-card" data-filtered data-filter="wishlist">
+            <h4>Namibia Desert Sky</h4>
+            <div class="booking-meta">
+              <span>TBD 2027</span>
+              <span>Wishlist</span>
+              <span class="badge-status warning">Wishlist</span>
+            </div>
+            <div class="booking-actions">
+              <a class="btn light" href="../packages/package-details.html">Explore details</a>
+              <a class="btn" href="../packages/booking.html">Start planning</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../index.html">
+            <img src="../assets/images/logo/travel-hub.svg" alt="Travel Hub logo" width="48" height="48" data-lazy="false" />
+            Travel Hub
+          </a>
+          <p>Purpose-led journeys that celebrate local culture, keep travelers safe, and empower communities through responsible tourism.</p>
+          <div class="footer-social" aria-label="Follow Travel Hub">
+            <ul>
+              <li>
+                <a class="social-link facebook" href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Travel Hub on Facebook">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325v21.351C0 23.406 0.593 24 1.325 24H12.82v-9.294H9.69v-3.622h3.13V8.41c0-3.1 1.893-4.788 4.658-4.788 1.325 0 2.463 0.099 2.794 0.143v3.24l-1.918 0.001c-1.504 0-1.795 0.715-1.795 1.763v2.314h3.587l-0.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.676V1.325C24 0.593 23.406 0 22.675 0z"></path></svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-link instagram" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Travel Hub on Instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 0h9A7.5 7.5 0 0 1 24 7.5v9A7.5 7.5 0 0 1 16.5 24h-9A7.5 7.5 0 0 1 0 16.5v-9A7.5 7.5 0 0 1 7.5 0zm0 2C4.467 2 2 4.467 2 7.5v9C2 19.533 4.467 22 7.5 22h9c3.033 0 5.5-2.467 5.5-5.5v-9C22 4.467 19.533 2 16.5 2h-9z"></path><path d="M12 6.5A5.5 5.5 0 1 1 6.5 12 5.5 5.5 0 0 1 12 6.5zm0 2A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 8.5z"></path><circle cx="17.5" cy="6.5" r="1.5"></circle></svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-link x" href="https://twitter.com" target="_blank" rel="noopener" aria-label="Travel Hub on X (Twitter)">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19 11.5 12 6 5h3l4.5 5.5L18 5h3l-5.5 7 5.5 7h-3l-4.5-5.5L9 19H6z"></path></svg>
+                </a>
+              </li>
+              <li>
+                <a class="social-link youtube" href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="Travel Hub on YouTube">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a2.97 2.97 0 0 0-2.09-2.101C19.159 3.5 12 3.5 12 3.5s-7.159 0-9.408.585a2.97 2.97 0 0 0 2.09 2.101C0 8.444 0 12 0 12s0 3.556.502 5.814a2.97 2.97 0 0 0 2.09 2.101C4.841 20.5 12 20.5 12 20.5s7.159 0 9.408-.585a2.97 2.97 0 0 0 2.09-2.101C24 15.556 24 12 24 12s0-3.556-.502-5.814zM9.75 15.568V8.432L15.5 12l-5.75 3.568z"></path></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <div class="footer-links">
+            <a href="../destinations/index.html">Destinations</a>
+            <a href="../packages/index.html">Packages</a>
+            <a href="../services/index.html">Services</a>
+          </div>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="../about.html">About</a>
+            <a href="../blog/index.html">Blog</a>
+            <a href="../contact.html">Contact</a>
+          </div>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="tel:+14155550123">+1 415 555 0123</a>
+            <a href="tel:+442071234567">+44 20 7123 4567</a>
+            <a href="mailto:hello@travelhub.com">hello@travelhub.com</a>
+            <a href="https://maps.google.com/?q=Travel+Hub+San+Francisco" target="_blank" rel="noopener">San Francisco · Barcelona</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <span>© <span data-year></span> Travel Hub. Crafted with care for explorers worldwide.</span>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
+          <svg class="theme-icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="theme-toggle-text">Dark mode</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-3fpdpbF4zZZgvdU0qbodui6wO6PvxBUw9jq5lH0KZsI=" crossorigin="anonymous"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+
+</html>
+
